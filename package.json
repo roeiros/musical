@@ -1,0 +1,14 @@
+{
+  "name": "musical",
+  "version": "1.0.0",
+  "description": "musical app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "roei",
+  "license": "ISC",
+  "dependencies": {
+     "express": "*"
+  }
+}
