@@ -9,6 +9,11 @@
   "author": "roei",
   "license": "ISC",
   "dependencies": {
-     "express": "*"
+    "body-parser": "^1.15.2",
+    "express": "*",
+    "mongoose": "^4.5.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.10.0"
   }
 }
