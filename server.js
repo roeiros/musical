@@ -28,6 +28,13 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/example',function(req,res){
+    res.json({
+        success: true,
+        name   : 'benny'
+    });
+});
+
 app.post('/user/signup',function(req,res){
     var user = new User({
         name  : req.body.name,

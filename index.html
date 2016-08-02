@@ -1,14 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="Music">
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/style.css" rel="stylesheet" type="text/css"/>
-        <script src="js/jquery/dist/jquery.js" type="text/javascript"></script>
+        <link href="css/shopStyle.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="css/style.css" rel="stylesheet" type="text/css"/>-->
     </head>
-    <body>
-      <form role="form" name="frmSignup">
+    <body ng-controller="ShopCtrl">
+        <div class='header'><h1></h1></div>
+        <div class="shop" >
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                filter by name: <input type="text" ng-model="filterByName">
+                &nbsp;&nbsp;&nbsp;
+                filter by category: <select ng-model="filterByCat" ng-options="ctg for ctg in ctgs">
+            </select>
+            </p>
+            <div class="product" 
+                 ng-repeat="product in products | ctgfilt: filterByCat | filter:{name: filterByName} "  
+                 ng-click="addToCart(product)" > 
+                <img ng-src="{{product.pic}}" class="prodPic">
+                <p class="prodName" ng-class='{disabledItem : product.disabled }' ng-bind="product.name"></p>
+                <p class="price" ng-class='{disabledItem : product.disabled}'>
+                    <span class="price">$</span> <span class="price" ng-bind="product.price"></span>
+                </p>
+            </div>
+        </div>
+        <div class="details">
+            <div class="prodDetails" ng-repeat="item in cart">
+               <img class="cartPic" ng-src="{{item.pic}}">
+               <span class="cartProd" ng-bind="item.name"></span>
+               <button class="cartProdIncrease" ng-disabled="item.quantity == item.stock" ng-click="manageItemQuantity($index,'+')">+</button>
+               <span class="cartProdQuantity" ng-bind="item.quantity"></span>
+               <button class="cartProdDecrease" ng-click="manageItemQuantity($index,'-')">-</button>
+               <span class="cartPrice"> <span>$</span> <span ng-bind="item.price * item.quantity"></span></span>
+            </div>
+            <p>
+                <span class="total" ng-hide="!total">Total:</span>
+                <span class="totalPrice" ng-hide="!total"><span >$ </span><span ng-bind="total"></span></span>
+            </p>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!--      <form role="form" name="frmSignup">
       
         <h1>Sign Up</h1>
         
@@ -24,7 +73,8 @@
           </div>
         </fieldset>
         <button onclick="signup(event)">Sign Up</button>
-      </form>
-      <script src="myjs/myjs.js" type="text/javascript"></script>
+      </form>-->
+        <script src="js/angular/angular.js" type="text/javascript"></script>
+        <script src="myjs/myjs.js" type="text/javascript"></script>
     </body>   
 </html>
