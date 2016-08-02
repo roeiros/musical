@@ -8,7 +8,7 @@
     <!--<link href="css/style.css" rel="stylesheet" type="text/css"/>-->
     </head>
     <body ng-controller="ShopCtrl">
-        <div class='header'><h1></h1></div>
+        <div class='header'><h1>Roei's shop</h1></div>
         <div class="shop" >
             <p>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -18,7 +18,7 @@
             </select>
             </p>
             <div class="product" 
-                 ng-repeat="product in products | ctgfilt: filterByCat | filter:{name: filterByName} "  
+                 ng-repeat="product in products | ctgfilt: filterByCat | filter:{name: filterByName} as filtered "  
                  ng-click="addToCart(product)" > 
                 <img ng-src="{{product.pic}}" class="prodPic">
                 <p class="prodName" ng-class='{disabledItem : product.disabled }' ng-bind="product.name"></p>

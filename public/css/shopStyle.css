@@ -22,50 +22,49 @@ div.header > h1
 }
 .shop
 {
-    width: 78%;
+    width: 74%;
     overflow: hidden;
     float: left;
 }
 div.details
 {
-    width: 19%;
+    width: 23%;
     float: left;
     margin-left: 1%;
     margin-top: 50px;
 }
 div.product
 {
-    
     align-content: center;
     background-color: white;
     border: 1px black solid;
-    border-radius:  20px/60px;
+    border-radius: 20px/60px;
     box-shadow: 0 0 5px 2px rgba(0,0,0,.35);
     margin: 6px;
     float: left;
-    height: 300px;
-    width: 220px
+    height: 228px;
+    width: 202px;
 }
 img.prodPic
 {
-    margin-top:13px;
-    margin-left: 33px;
-    height: 200px;
-    width: 150px
+    margin-top: 13px;
+    margin-left: 26px;
+    height: 146px;
+    width: 154px;
 }
 p.prodName
 {
-    margin-top: 10px;
+    margin-top: 7px;
     text-align: center;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 18px;
     color: black;
 }
 .price
 {
-    margin-top: -25px;
+    margin-top: -18px;
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
     color: green;
 }
 .cartPic
@@ -80,17 +79,19 @@ p.prodName
     float: left;
     color: black;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 19px;
     margin-left: 20px;
-    min-width: 55px;
+    width: 45px;
     margin-top: 13px;
+    margin-right: 30px;
+        
 }
 .cartPrice
 {
     float: left;
     color: green;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 19px;
     margin-left: 20px;
     margin-top: 13px;
 }
@@ -99,7 +100,7 @@ p.prodName
     float: left;
     color: black;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 19px;
     margin-left: 15px;
     margin-right: 2px;
     min-width: 25px;
@@ -126,10 +127,11 @@ p.prodName
 }
 .total
 {
-    font-size: 30px;
+    font-size: 20px;
+    margin-left: 50px;
 }
 .totalPrice
 {
-    font-size: 30px;
-    margin-left: 100px;
+    font-size: 20px;
+    margin-left: 120px;
 }

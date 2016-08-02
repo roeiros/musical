@@ -43,7 +43,7 @@ app.filter('ctgfilt', function() {
         if (pr.categories.indexOf(ctg) > -1) productsToReturn.push(pr);
     });    
     return productsToReturn;
-  }
+  };
 });
 app.controller("ShopCtrl", function($scope) {
   $scope.cart = [];
@@ -82,20 +82,53 @@ app.controller("ShopCtrl", function($scope) {
             pic: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQVaAv_v7WIAlaDt3Pkhy498iixvt9TXiFEEksOKn_KtJaRNn2o-A',
             categories: ["sport", "summer", "fun", "clothing", "menswear"],
             stock : 10
+        },
+        {
+            name:'Avocado', 
+            price: 3,
+            pic: 'http://www.oahufresh.com/wp-content/uploads/2015/07/avo.jpg',
+            categories: ["food", "health","summer"],
+            stock : 15
+        },
+        {
+            name:'Remote car', 
+            price: 80,
+            pic: 'http://www.neatstuff.net/cars-trucks/Remote-cars/gas/Gas-Car-Mustang-10146T3-C.jpg',
+            categories: ["sport", "fun",'hobbies'],
+            stock : 8
+        },
+        {
+            name:'Drone', 
+            price: 420,
+            pic: 'http://blogs-images.forbes.com/frankbi/files/2015/04/Phantom-3-3-e1428477888137-1940x1089.jpg',
+            categories: ["sport", "fun", "photo","summer"],
+            stock : 17
+        },
+        {
+            name:'Guitar', 
+            price: 75,
+            pic: 'http://i.ebayimg.com/00/s/MzAwWDMwMA==/z/bR8AAOSwxH1T~u32/$_35.JPG?set_id=2',
+            categories: ["fun", "hobbies", "summer"],
+            stock : 13
+        },
+        {
+            name:'Tredmill', 
+            price: 150,
+            pic: 'http://shop.lifefitness.com/UserFiles/Images/Products/F1-Smart-Treadmill-L.jpg',
+            categories: ["sport", "health", "hobbies","summer"],
+            stock : 13
         }
         ];
         
-        var getCtgs = function(){
+        var getCtgs = function(filteredItems){
            var ctgs = [];
-           $scope.products.forEach(function(it){                 
+           filteredItems.forEach(function(it){                 
                it.categories.forEach(function(ctg){
                    if ( ctgs.indexOf(ctg) === -1 ) ctgs.push(ctg);                 
                }) ;            
            });          
            $scope.ctgs = ctgs;
        };
-        
-       getCtgs();
        
        $scope.addToCart = function(item){
            if (item.disabled) return;
@@ -132,16 +165,10 @@ app.controller("ShopCtrl", function($scope) {
             }  
             getTotal();
        };
-       
-       var getCtgs = function(){
-           var ctgs = [];
-           $scope.cart.forEach(function(it){
-               it.categories.forEach(function(ctg){
-                   ctgs.push(ctg)
-               })             
-           });
-           $scope.ctgs = ctgs;
-       };
+            
+       $scope.$watch('filtered', function(newVal) {
+           if (newVal) getCtgs(newVal);                                       
+       });
 });
 
 
