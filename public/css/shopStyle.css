@@ -39,7 +39,7 @@ div.product
     background-color: white;
     border: 1px black solid;
     border-radius: 20px/60px;
-    box-shadow: 0 0 5px 2px rgba(0,0,0,.35);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     margin: 6px;
     float: left;
     height: 228px;
@@ -54,18 +54,19 @@ img.prodPic
 }
 p.prodName
 {
-    margin-top: 7px;
+        margin-top: 3px;
     text-align: center;
     font-weight: bold;
-    font-size: 18px;
-    color: black;
+    font-size: 23px;
+    color: black
 }
 .price
 {
-    margin-top: -18px;
+       margin-top: -27px;
     text-align: center;
-    font-size: 16px;
+    font-size: 20px;
     color: green;
+    font-weight: bold;
 }
 .cartPic
 {
@@ -89,7 +90,7 @@ p.prodName
 .cartPrice
 {
     float: left;
-    color: green;
+    color: black;
     font-weight: bold;
     font-size: 19px;
     margin-left: 20px;
@@ -127,11 +128,14 @@ p.prodName
 }
 .total
 {
+    font-weight: bold;
     font-size: 20px;
     margin-left: 50px;
 }
 .totalPrice
 {
+color: green;
+    font-weight: bold;
     font-size: 20px;
     margin-left: 120px;
 }
