@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
 body
 {
+    overflow-y: hidden;
     min-width: 320px;
 }
 *
@@ -61,101 +62,14 @@ p.prodName
     color: green;
     font-weight: bold;
 }
-.cartPic
-{
-    float: left;
-    width: 50px;
-    height: 50px;
-    margin-top: 7px;
-    margin-left: 2px;
-}
-.cartProd 
-{
-    float: left;
-    color: black;
-    font-weight: bold;
-    font-size: 15px;
-    margin-left: 5px;
-    width: 45px;
-    margin-top: 21px;
-    margin-right: 21px;
-}
-.cartPrice
-{
-    float: left;
-    color: black;
-    font-weight: bold;
-    font-size: 14px;
-    margin-left: 28px;
-    margin-top: 20px;
-}
-.cartProdQuantity
-{
-    float: left;
-    color: black;
-    font-weight: bold;
-    font-size: 16px;
-    margin-left: 2px;
-    margin-right: 7px;
-    min-width: 20px;
-    margin-top: 18px;
-}
-.cartProdDecrease
-{
-    float: left;
-    margin-left: 32px;
-    margin-top: 20px;
-    border: none;
-    background: none;
-    outline: none;
-    font-size: 15px;
-}
-.cartProdDecrease:active
-{
-  transform: translateY(2px);
-}
-.cartProdIncrease
-{
-    float: left;
-    margin-top: 20px;
-    border: none;
-    background: none;
-    outline: none;
-    font-size: 15px;
-    margin-left: -10px;      
-}
-.cartProdIncrease:active
-{
-    transform: translateY(2px);
-}
-.prodDetails
-{
-    overflow: hidden;
-}
-.cartItSelf
-{
-    width:350px;
-    height:170px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
+
+
 .disabledItem
 {
    display:block!important; 
 }
-.total
-{
-    font-weight: bold;
-    font-size: 20px;
-    margin-left: 50px;
-}
-.totalPrice
-{
-    color: green;
-    font-weight: bold;
-    font-size: 20px;
-    margin-left: 57px;
-}
+
+
 .soldOutPic
 {
     width: 102px;
@@ -169,7 +83,7 @@ p.prodName
 .myBadge
 {
     display: inline-block;
-    min-width: 17px;
+    min-width: 32px;
     min-height: 19px;
     padding: 3px 7px;
     font-weight: 700;
@@ -181,9 +95,9 @@ p.prodName
     background-color: red!important;
     color: white;
     margin-top: -2px;
-    font-size: 11px!important;
-    margin-right: 2px;
-cursor: pointer;
+    font-size: 13px!important;
+    margin-right: -1px;
+    cursor: pointer;
 }
 .cartIcon
 {
@@ -197,64 +111,9 @@ cursor: pointer;
     -ms-transform: scaleX(-1)!important;
     min-width: 20px!important;
     font-size: 17px;
-}
-.details
-{
-    margin-right: 15px;
-    width: 400px;
-    position:fixed;
-    background-color:white;
-    border: 1.5px solid lightgrey;
-    right:0;
-    z-index:9999;
-    opacity: 0.8;
-    border-radius: 20px/40px;
-}
-.details:after, .details:before {
-    bottom: 100%;
-    left: 67%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
+    margin-right: 79.5px;
 }
 
-.details:after {
-    border-color: rgba(136, 183, 213, 0);
-    border-bottom-color: white;
-    border-width: 30px;
-    margin-left: -30px;    
-}
-.details:before {
-    border-color: rgba(194, 225, 245, 0);
-    border-bottom-color: lightgrey;
-    border-width: 31px;
-    margin-left: -31px;    
-}
-.details.ng-hide-add         
-{ 
-    opacity: 0.8;
-    animation:0.5s lightSpeedOut ease;     
-}
-.details.ng-hide-remove      
-{
-    opacity: 0.8;
-    animation:0.5s flipInX ease;     
-}
-.cartHeader
-{
-    margin-top: 15px;
-    font-size: 20px;
-    display: inline-block;
-}
-.clearCartBtn
-{
-    float: right;
-    margin-top: 14px;
-    margin-right: 102px;
-}
 .disabledItemButton
 {
     box-shadow: 0 5px #666!important;
@@ -268,152 +127,4 @@ cursor: pointer;
 {
     margin-top: 15px;
     margin-left: 5px;
-}
-.totalAndTotalPrice
-{
-    margin-top: 20px;
-}
-.IncreasingDisabled
-{
-    transform: translateY(2px);
-}
-.emptyCartMessage
-{
-    margin-top: 69px;
-    margin-left: 89px;
-    font-weight: bolder;
-}
-input
-{
-    text-align: center;
-}
-.adminHeadProdId
-{
-    width: 100px;
-}
-.adminHeadProdName
-{
-    width: 180px;
-}
-.adminHeadProdPic
-{
-    width: 110px;
-}
-.adminHeadProdPrice
-{
-    width: 70px;
-}
-.adminHeadProdStock
-{
-    width: 70px;
-}
-.adminHeadProdCtgs
-{
-    width: 400px;
-}
-.adminProdId
-{
-    width: 50px;
-}
-.adminProdName
-{
-    width: 100px;
-}
-.adminProdPic
-{
-    height: 45px;
-    width: 44px;
-}
-.adminProdPrice 
-{
-    width: 40px;
-}
-.adminProdStock
-{
-    width: 40px;
-}
-.adminProdCtg
-{
-    width: 85px;
-    margin-right: 5px;
-}
-.adminProdPicUpload
-{
-    width: 80px;
-    color: #fff;
-    background-color: #337ab7;
-    border-color: #2e6da4;
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-}
-.adminProdPicUpload:hover 
-{
-    color: #fff;
-    background-color: #286090;
-    border-color: #204d74;
-}
-.adminProdPicUpload:active
-{
-  box-shadow: 0 2px #666;
-  transform: translateY(4px);
-}
-input[type="file"] 
-{
-    display: none;
-}
-.addCtgBtn
-{
-    border: none;
-    background: none;
-    outline: none;
-    color: green;
-}
-.addCtgBtn:active
-{
-    transform: translateY(2px);
-}
-.updateProductBtn:active
-{
-    box-shadow: 0 2px #666;
-    transform: translateY(4px);
-}
-tbody tr:nth-child(odd) {
-    background-color: #eeeded!important;
-}
-.fluidMedia {
-    margin-top: 2.5%;
-    margin-left: 10%;
-    position: relative;
-    padding-bottom: 56.25%; /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
-    padding-top: 30px;
-    height: 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-
-.fluidMedia iframe {
-    position: absolute;
-    top: 0; 
-    left: 0;
-    width: 80%;
-    height: 60%;
-    overflow-x: hidden;
-    overflow-y: hidden;
 }

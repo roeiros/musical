@@ -10,9 +10,17 @@ app.config(function($routeProvider) {
         templateUrl : "templates/admin.html",
         controller  : "adminCtrl"
     })
-    .when("/customerView", {
+    .when("/admin/manageOrders", {
+        templateUrl : "templates/manageOrders.html",
+
+    })
+    .when("/admin/statistics", {
+        templateUrl : "templates/statistics.html",
+
+    })
+    .when("/admin/customerView", {
         templateUrl : "templates/customerView.html",
-//        controller  : "productCtrl"
+
     });    
 });
 

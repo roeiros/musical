@@ -10,7 +10,8 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="css/AnimateCss/animate.css" rel="stylesheet" type="text/css"/>
         <link href="css/shopStyle.css" rel="stylesheet" type="text/css"/>
-  
+        <link href="css/adminCss.css" rel="stylesheet" type="text/css"/>
+        <link href="css/cartCss.css" rel="stylesheet" type="text/css"/>
     <!--<link href="css/style.css" rel="stylesheet" type="text/css"/>-->
     </head>
     <body>
@@ -31,9 +32,9 @@
                           <a class="dropdown-toggle" data-toggle="dropdown" style="cursor:pointer" >Admin<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                           <li><a href="/#/admin">Manage stock</a></li>
-                          <li><a href="#">Manage orders</a></li>
-                          <li><a href="#">Statistics</a></li>
-                          <li><a href="#/customerView">Customer's view</a></li>
+                          <li><a href="#/admin/manageOrders">Manage orders</a></li>
+                          <li><a href="#/admin/statistics">Statistics</a></li>
+                          <li><a href="#/admin/customerView">Customer's view</a></li>
                         </ul>
                       </li>
                       <li><a href="#">Contact us</a></li>
@@ -43,8 +44,7 @@
                             <a class="cartIcon"  ng-click="showCart = !showCart" ng-class="{ active: showCart }">
                                 <span class="myBadge" ng-hide='!cart.cartTotalSum' ng-bind="cart.cartItems"></span><span class="glyphicon glyphicon-shopping-cart cartGlyphicon"></span>
                             </a>
-                        </li>
-                        <li><a href="#"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;&nbsp;<span>Check-out</span></a></li>
+                        </li>                        
                     </ul>
                   </div>
                 </div>
@@ -73,10 +73,11 @@
                     </div>
                 </div>
                 <div class="totalAndTotalPrice">
-                    <p>
                         <span class="total" ng-hide="!cart.cartTotalSum">Total:</span>
                         <span class="totalPrice" ng-hide="!cart.cartTotalSum"><span >$ </span><span ng-bind="cart.cartTotalSum" ng-hide="!cart.cartTotalSum"></span></span>
-                    </p>
+                </div>
+                <div class='chkoutBtnDiv'>
+                        <button class='btn btn-primary chkoutBtn' ng-hide="!cart.cartTotalSum"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;&nbsp;<span>Check-out</span></button>                   
                 </div>
             </div>
         </div>
