@@ -1,0 +1,36 @@
+ <div class='row filters'>
+    <div class="col-md-3"></div>
+    <div class="col-xs-12 col-md-7">
+    <p>
+        <span class="fliterCtgs">filter by name: 
+            <input type="text" ng-model="filterByName" class="fliterNames"></span>
+        &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        <span class="fliterCtgs">filter by category: 
+        <select ng-model="filterByCat" ng-options="ctg for ctg in ctgs" class="fliterCtgs">
+        </select></span>
+        &nbsp;&nbsp;&nbsp;
+        <span ng-hide="!filterByCat">Showing now: </span><span ng-bind="filtered.length" ng-hide="!filterByCat"></span><span ng-hide="!filterByCat"> items</span>
+    </p>
+    </div>
+     <div class="col-md-2"></div>
+</div>
+<div class='row'>
+    <div class="col-md-1"></div>
+    <div class="shop col-xs-12 col-md-10">
+        <div class="product" ng-repeat="product in products | ctgfilt: filterByCat | filter:{name: filterByName} as filtered"  
+             ng-mousedown="addToCart(product)" id="product{{$index}}" 
+             ng-class="{disabledItemButton : product.disabled }">
+            <img class ="soldOutPic" ng-show="product.disabled" ng-src="img\soldOut.jpg" alt=""/>
+            <img ng-src="{{product.pic}}" class="prodPic">  
+            <p class="prodName" ng-bind="product.name"></p>
+            <p class="price">
+                <span class="price">$</span> 
+                <span class="price" ng-bind="product.price"></span>
+            </p>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+    
+    
+</div>
+    

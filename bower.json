@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "dependencies": {
     "jquery": "*",
-    "angular": "^1.5.8"
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8"
   },
   "private": true
 }
