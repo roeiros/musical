@@ -1,0 +1,68 @@
+<div>
+    <div class="container-fluid">
+        <h2 style='text-align: center'>Admin's zone</h2>
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="/#/admin">Manage stock</a></li>
+          <li><a href="#">Manage orders</a></li>
+          <li><a href="#">Statistics</a></li>
+          <li><a href="#/customerView">Customer's view</a></li>
+        </ul>
+    </div>
+    <div class="container-fluid">
+         <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="adminHeadProdId">Product ID</th>
+                  <th class="adminHeadProdName">Name</th>
+                  <th class="adminHeadProdPic">Pic</th>
+                  <th class="adminHeadProdPrice">Price</th>
+                  <th class="adminHeadProdStock">Stock</th>
+                  <th class="adminHeadProdCtgs">Categories</th>
+                  <th>Click to update</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td class="adminProdId">1</td>
+                    <td><input class="adminProdName" type="text" value="jeans"></td>
+                    <td><img class="adminProdPic" src='http://riverisland.scene7.com/is/image/RiverIsland/280526_main?$CrossSellProductPage514$'/></td>
+                    <td><span>$ </span><span><input class="adminProdPrice" type="number" value="20"></span></td>
+                    <td><input class="adminProdStock" type="number" value="4"></td>
+                    <td>
+                        <input class="adminProdCtg" type="text" value="sport">
+                        <input class="adminProdCtg" type="text" value="clothing">
+                        <input class="adminProdCtg" type="text" value="menswear">
+                    </td>
+                    <td>
+                        <button class="btn btn-primary updateProductBtn">Update</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="adminProdId">2</td>
+                    <td><input class="adminProdName" type="text"></td>
+                    <td>
+                        <label class="adminProdPicUpload">
+                            <input type="file" name="pic" accept="image/*"/>
+                            Upload
+                        </label>
+                    </td>
+                    <td><span>$ </span><span><input class="adminProdPrice" type="number"></span></td>
+                    <td><input class="adminProdStock" type="number" ></td>
+                    <td>
+                        <input class="adminProdCtg" type="text">
+                        <button class="addCtgBtn">
+                            <span class="glyphicon glyphicon-plus-sign"></span>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary updateProductBtn">Update</button>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

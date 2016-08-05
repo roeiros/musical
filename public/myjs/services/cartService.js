@@ -3,13 +3,7 @@ app.service('cartService',function($rootScope){
     this.broadcast = function(evName,obj) {
         $rootScope.$broadcast(evName,obj);
     };
-    
-    
-    this.testme = function(){
-        alert('asdasdasdasdas');
-    };
-    
-    
+ 
     this.listen    = function(evName,callback) {
         $rootScope.$on(evName,callback)
     };

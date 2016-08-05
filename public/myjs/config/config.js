@@ -5,6 +5,14 @@ app.config(function($routeProvider) {
     .when("/", {
         templateUrl : "templates/products.html",
         controller  : "productCtrl"
+    })
+    .when("/admin", {
+        templateUrl : "templates/admin.html",
+        controller  : "adminCtrl"
+    })
+    .when("/customerView", {
+        templateUrl : "templates/customerView.html",
+//        controller  : "productCtrl"
     });    
 });
 
