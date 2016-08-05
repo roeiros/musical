@@ -1,0 +1,84 @@
+<div>
+    <div class="container-fluid">
+        <h2 style='text-align: center'>Admin's zone</h2>
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="/#/admin">Manage stock</a></li>
+          <li><a href="#/admin/manageOrders">Manage orders</a></li>
+          <li><a href="#/admin/statistics">Statistics</a></li>
+          <li><a href="#/admin/customerView">Customer's view</a></li>
+        </ul>
+    </div>
+    <div class="container-fluid">
+         <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="adminHeadProdId">Product ID</th>
+                  <th class="adminHeadProdName" style="padding-left: 39px;">Name</th>
+                  <th class="adminHeadProdPic" style="padding-left: 42px;">Pic</th>
+                  <th class="adminHeadProdPrice" style="padding-left: 28px;">Price</th>
+                  <th class="adminHeadProdStock" style="padding-left: 16px;">Stock</th>
+                  <th class="adminHeadProdCtgs" style="padding-left: 250px;">Categories</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td class="adminProdId"><div class="adminProdIdDiv">1</div></td>
+                    <td><input class="adminProdName" type="text" value="Jeans"></td>
+                    <td><img class="adminProdPic" src='http://riverisland.scene7.com/is/image/RiverIsland/280526_main?$CrossSellProductPage514$'/></td>
+                    <td><span>$ </span><span><input class="adminProdPrice" type="number" value="20"></span></td>
+                    <td><input class="adminProdStock" type="number" value="4"></td>
+                    <td>
+                        <input class="adminProdCtg" type="text" value="sport">
+                        <input class="adminProdCtg" type="text" value="clothing">
+                        <input class="adminProdCtg" type="text" value="menswear">
+                    </td>
+                    <td>
+                        <button class="btn btn-primary updateProductBtn">Update</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="adminProdId"><div class="adminProdIdDiv">2</div></td>
+                    <td><input class="adminProdName" type="text" value="Shirt"></td>
+                    <td><img class="adminProdPic" src='http://charliemenswear.com/wp-content/uploads/2016/03/pepe-teal-plain-men-shirt.jpg'/></td>
+                    <td><span>$ </span><span><input class="adminProdPrice" type="number" value="15"></span></td>
+                    <td><input class="adminProdStock" type="number" value="8"></td>
+                    <td>
+                        <input class="adminProdCtg" type="text" value="sport">
+                        <input class="adminProdCtg" type="text" value="clothing">
+                        <input class="adminProdCtg" type="text" value="menswear">
+                        <input class="adminProdCtg" type="text" value="summer">
+                    </td>
+                    <td>
+                        <button class="btn btn-primary updateProductBtn">Update</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="adminProdId"><div class="adminProdIdDiv">...</div></td>
+                    <td><input class="adminProdName" type="text"></td>
+                    <td>
+                        <label class="adminProdPicUpload">
+                            <input type="file" name="pic" accept="image/*"/>
+                            Upload
+                        </label>
+                    </td>
+                    <td><span>$ </span><span><input class="adminProdPrice" type="number"></span></td>
+                    <td><input class="adminProdStock" type="number" ></td>
+                    <td>
+                        <input class="adminProdCtg" type="text">
+                        <button class="addCtgBtn">
+                            <span class="glyphicon glyphicon-plus-sign"></span>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary addProductBtn">Add</button>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

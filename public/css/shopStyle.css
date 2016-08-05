@@ -1,38 +1,24 @@
 @import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
+body
+{
+    overflow-y: hidden;
+    min-width: 320px;
+}
 *
 {
     font-family: Alef hebrew;
-}
-div.header
-{
-    width: 99%;
-    margin-left: 0.5%;
-    height: 5%;
-    background-color: black;
-    color: white; 
-    padding-top:5px;
-    box-shadow: inset 0 0 0 7px rgba(255,255,255,.5);
-    border-radius:  0px 0px 50px 50px;
-    
-}
-div.header > h1
-{
-    text-align:center;
-    font-size: 30px;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;  
 }
 .shop
 {
-    width: 74%;
     overflow: hidden;
     float: left;
+    padding: 10px 0px 13px 23px!important;
 }
-div.details
-{
-    width: 23%;
-    float: left;
-    margin-left: 1%;
-    margin-top: 50px;
-}
+
 div.product
 {
     align-content: center;
@@ -40,102 +26,97 @@ div.product
     border: 1px black solid;
     border-radius: 20px/60px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    margin: 6px;
     float: left;
-    height: 228px;
-    width: 202px;
+    margin: 9px 2px 3px 3px;
+    height: 150px;
+    width: 128px;
+    cursor: pointer;
+}
+div.product:active 
+{
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 img.prodPic
 {
-    margin-top: 13px;
-    margin-left: 26px;
-    height: 146px;
-    width: 154px;
+    margin-top: 10px;
+    margin-left: 20px;
+    height: 90px;
+    width: 88px;
 }
 p.prodName
 {
-        margin-top: 3px;
+    margin-top: 1px;
     text-align: center;
     font-weight: bold;
-    font-size: 23px;
-    color: black
+    font-size: 14px;
+    color: black;
 }
 .price
 {
-       margin-top: -27px;
+    margin-top: -13px;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     color: green;
     font-weight: bold;
 }
-.cartPic
+.disabledItem
 {
-    float:left;
-    width: 50px;
-    height: 50px;
-    margin-top:5px;
+   display:block!important; 
 }
-.cartProd 
+.soldOutPic
 {
-    float: left;
-    color: black;
-    font-weight: bold;
-    font-size: 19px;
-    margin-left: 20px;
-    width: 45px;
-    margin-top: 13px;
-    margin-right: 30px;
-        
+    width: 102px;
+    height: 139px;
+    margin-left: 12px;
+    margin-top: 4px;
+    position: absolute;
+    z-index: 3;
+    opacity: 0.5;
 }
-.cartPrice
+.myBadge
 {
-    float: left;
-    color: black;
-    font-weight: bold;
-    font-size: 19px;
-    margin-left: 20px;
-    margin-top: 13px;
+    display: inline-block;
+    min-width: 32px;
+    min-height: 19px;
+    padding: 3px 7px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-color: red!important;
+    color: white;
+    margin-top: -2px;
+    font-size: 13px!important;
+    margin-right: -1px;
+    cursor: pointer;
 }
-.cartProdQuantity
+.cartIcon
 {
-    float: left;
-    color: black;
-    font-weight: bold;
-    font-size: 19px;
+    cursor: pointer; 
+}
+.disabledItemButton
+{
+    box-shadow: 0 5px #666!important;
+    transform: translateY(4px)!important;
+}
+.filterNames
+{
+    margin-left: 5px;
+    width: 120px;
+    text-align: left!important;
+}
+.fliterCtgs
+{
+    margin-top: 15px;
+    margin-left: 5px;
+    min-width: 120px;
+}
+.filtersMessage
+{
+    width: 240px;
+    display: inline;
     margin-left: 15px;
-    margin-right: 2px;
-    min-width: 25px;
-    margin-top: 13px;
-}
-.cartProdIncrease
-{
-    float: left;
-    margin-left: 15px;
-    margin-top: 13px;
-}
-.cartProdDecrease
-{
-   float: left;
-   margin-top: 13px;
-}
-.prodDetails{
-    overflow: hidden;
-}
-
-.disabledItem{
-   color:red!important;
-   text-decoration: line-through!important;
-}
-.total
-{
-    font-weight: bold;
-    font-size: 20px;
-    margin-left: 50px;
-}
-.totalPrice
-{
-color: green;
-    font-weight: bold;
-    font-size: 20px;
-    margin-left: 120px;
 }

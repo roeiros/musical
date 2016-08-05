@@ -1,0 +1,155 @@
+input
+{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.adminHeadProdId
+{
+    width: 100px;
+}
+.adminHeadProdName
+{
+    width: 180px;
+}
+.adminHeadProdPic
+{
+    width: 110px;
+}
+.adminHeadProdPrice
+{
+    width: 90px;
+}
+.adminHeadProdStock
+{
+    width: 90px;
+}
+.adminHeadProdCtgs
+{
+    width: 600px;
+}
+.adminProdIdDiv
+{
+    margin-top:15px;
+}
+.adminProdId
+{
+    text-align: center;
+    width: 50px;
+}
+.adminProdName
+{
+    width: 100px;
+}
+.adminProdPic
+{
+    height: 49px;
+    width: 40px;
+    margin-left: 20px;
+    margin-top:2px;
+}
+.adminProdPrice 
+{
+    width: 50px;
+}
+.adminProdStock
+{
+    width: 50px;
+}
+.adminProdCtg
+{
+    width: 85px;
+    margin-right: 5px;
+}
+.adminProdPicUpload
+{
+    margin-top: 10px;
+    width: 80px;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.adminProdPicUpload:hover 
+{
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
+.adminProdPicUpload:active
+{
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+input[type="file"] 
+{
+    display: none;
+}
+.addCtgBtn
+{
+    font-size:15px;
+    border: none;
+    background: none;
+    outline: none;
+    color: #337ab7;
+}
+.addCtgBtn:active
+{
+    transform: translateY(2px);
+}
+.updateProductBtn
+{
+    margin-top:10px;
+}
+.updateProductBtn:active
+{
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+.addProductBtn
+{
+    margin-top:10px;
+    margin-left: 10px
+}
+.addProductBtn:active
+{
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+tbody tr:nth-child(odd) {
+    background-color: #eeeded!important;
+}
+.fluidMedia {
+    margin-top: 2.5%;
+    margin-left: 10%;
+    position: relative;
+    padding-bottom: 56.25%; /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
+    height: 0;
+}
+
+.fluidMedia iframe {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 80%;
+    height: 60%;
+}
+
