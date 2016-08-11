@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
 body
 {
+    overflow-x: hidden;
     overflow-y: hidden;
     min-width: 320px;
 }

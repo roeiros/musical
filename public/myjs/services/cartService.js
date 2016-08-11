@@ -5,9 +5,9 @@ app.service('cartService',function($rootScope){
     };
  
     this.listen    = function(evName,callback) {
-        $rootScope.$on(evName,callback)
+        $rootScope.$on(evName,callback);
     };
-    
+
     var cart           = [];
     var getTotalItems  = 0;
     var getTotalPrice  = 0;

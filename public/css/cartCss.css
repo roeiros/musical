@@ -24,6 +24,7 @@
     opacity: 0.8;
     border-radius: 20px/40px;
     margin-top: 2px;
+    min-height: 284px;
 }
 .details:after, .details:before {
     bottom: 100%;

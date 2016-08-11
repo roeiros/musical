@@ -1,8 +1,18 @@
+.adminZone
+{
+    margin-top: 15px;
+}
+.manageStock
+{
+    overflow-y: scroll!important;
+    height: 700px;
+}
 input
 {
     margin-top: 15px;
     margin-bottom: 15px;
     text-align: center;
+    font-size: 15px;
 }
 .adminHeadProdId
 {
@@ -14,11 +24,11 @@ input
 }
 .adminHeadProdPic
 {
-    width: 110px;
+    width: 70px;
 }
 .adminHeadProdPrice
 {
-    width: 90px;
+    width: 100px;
 }
 .adminHeadProdStock
 {
@@ -26,7 +36,11 @@ input
 }
 .adminHeadProdCtgs
 {
-    width: 600px;
+    width: 614px;
+}
+.adminHeadProdBtns
+{
+    width: 200px;        
 }
 .adminProdIdDiv
 {
@@ -39,7 +53,7 @@ input
 }
 .adminProdName
 {
-    width: 100px;
+    width: 150px;
 }
 .adminProdPic
 {
@@ -47,6 +61,7 @@ input
     width: 40px;
     margin-left: 20px;
     margin-top:2px;
+    cursor: pointer;
 }
 .adminProdPrice 
 {
@@ -56,10 +71,17 @@ input
 {
     width: 50px;
 }
+.adminProdCtgDiv
+{
+    padding-top:15px;
+}
 .adminProdCtg
 {
-    width: 85px;
+    width: 107px;
     margin-right: 5px;
+    font-size: 15px;
+    margin-top: 0px;
+    font-weight: 200;
 }
 .adminProdPicUpload
 {
@@ -97,12 +119,12 @@ input
 .adminProdPicUpload:active
 {
   box-shadow: 0 2px #666;
-  transform: translateY(4px);
+  transform: translateY(2px);
 }
-input[type="file"] 
+/*input[type="file"] 
 {
     display: none;
-}
+}*/
 .addCtgBtn
 {
     font-size:15px;
@@ -117,39 +139,123 @@ input[type="file"]
 }
 .updateProductBtn
 {
+    nargin-left:15px;
     margin-top:10px;
 }
 .updateProductBtn:active
 {
     box-shadow: 0 2px #666;
-    transform: translateY(4px);
+    transform: translateY(2px);
+}
+.removeProductBtn
+{
+    margin-top:10px;
+}
+.removeProductBtn:active
+{
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
 }
 .addProductBtn
 {
     margin-top:10px;
-    margin-left: 10px
+    margin-left: 50px
 }
 .addProductBtn:active
 {
     box-shadow: 0 2px #666;
-    transform: translateY(4px);
+    transform: translateY(2px);
 }
 tbody tr:nth-child(odd) {
     background-color: #eeeded!important;
 }
 .fluidMedia {
-    margin-top: 2.5%;
-    margin-left: 10%;
+    width: 90%;
+    height: 70%;
+    margin-top: 0.5%;
+    margin-left: 5%;
     position: relative;
     padding-bottom: 56.25%; /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
     height: 0;
 }
 
-.fluidMedia iframe {
+.fluidMedia > iframe {
     position: absolute;
     top: 0; 
     left: 0;
-    width: 80%;
-    height: 60%;
+    width: 100%;
+    height: 70%;
+    overflow-y: scroll;
 }
+.picToShowBackground
+{
+    z-index: 1000;
+    background-color: black;
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;        
+}
+
+.picToShow
+{
+    margin-left: 36%;
+    margin-top: 15%;
+    height: 402px;
+    width: 352px;
+    opacity: 15!important;
+    z-index:2000;
+    position: absolute;
+    top:0;
+    border: 4px #eeeded groove;
+    border-radius: 31px;
+    background-color: white;
+}
+.adminProdPicChange
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 12%;
+    margin-left: 43.5%;
+    width: 149px;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    z-index: 2000;
+}
+.adminProdPicChange:hover 
+{
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
+.adminProdPicChange:active
+{
+    margin-top: 12.1%;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
 

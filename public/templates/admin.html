@@ -1,84 +1,145 @@
-<div>
+  <form name="myForm" ng-controller="adminCtrl">
+    <fieldset>
+      <legend>Upload on form submit</legend>
+      Name:
+      <input type="text" name="name" ng-model="product.name" size="31" required>
+      <i ng-show="myForm.name.$error.required">*required</i>
+      Price:
+      <input type="text" name="price" ng-model="product.price" size="31" required>
+      <i ng-show="myForm.price.$error.required">*required</i>
+      Name:
+      <input type="text" name="stock" ng-model="product.stock" size="31" required>
+      <i ng-show="myForm.stock.$error.required">*required</i>
+      Categories:
+      <div ng-repeat="ctg in product.categories track by $index">
+          <input type="text" name="ctg{{$index}}" ng-model="product.categories[$index]">
+      </div>    
+      <br>Photo:
+      <input type="file" ngf-select ng-model="picFile" name="file"    
+             accept="image/*" ngf-max-size="5MB" required
+             ngf-model-invalid="errorFile">
+      <i ng-show="myForm.file.$error.required">*required</i><br>
+      <i ng-show="myForm.file.$error.maxSize">File too large 
+          {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+      <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb" style="width: 24px; height: 24px;"> <button ng-click="picFile = null" ng-show="picFile">Remove</button>
+      <br>
+      <button ng-show="myForm.$valid" ng-click="uploadPic(picFile)">Submit</button>     
+      <span class="progress" ng-show="picFile.progress >= 0">
+        <div style="width:{{picFile.progress}}%" 
+            ng-bind="picFile.progress + '%'"></div>
+      </span>
+      <span ng-show="picFile.result">Upload Successful</span>
+      <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+    </fieldset>
+    <br>
+  </form>
+
+
+<!--<div class="adminZone">
     <div class="container-fluid">
-        <h2 style='text-align: center'>Admin's zone</h2>
         <ul class="nav nav-tabs">
           <li class="active"><a href="/#/admin">Manage stock</a></li>
           <li><a href="#/admin/manageOrders">Manage orders</a></li>
+          <li><a href="#/admin/promotions">Promotions</a></li>
           <li><a href="#/admin/statistics">Statistics</a></li>
           <li><a href="#/admin/customerView">Customer's view</a></li>
         </ul>
     </div>
-    <div class="container-fluid">
-         <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th class="adminHeadProdId">Product ID</th>
-                  <th class="adminHeadProdName" style="padding-left: 39px;">Name</th>
-                  <th class="adminHeadProdPic" style="padding-left: 42px;">Pic</th>
-                  <th class="adminHeadProdPrice" style="padding-left: 28px;">Price</th>
-                  <th class="adminHeadProdStock" style="padding-left: 16px;">Stock</th>
-                  <th class="adminHeadProdCtgs" style="padding-left: 250px;">Categories</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                    <td class="adminProdId"><div class="adminProdIdDiv">1</div></td>
-                    <td><input class="adminProdName" type="text" value="Jeans"></td>
-                    <td><img class="adminProdPic" src='http://riverisland.scene7.com/is/image/RiverIsland/280526_main?$CrossSellProductPage514$'/></td>
-                    <td><span>$ </span><span><input class="adminProdPrice" type="number" value="20"></span></td>
-                    <td><input class="adminProdStock" type="number" value="4"></td>
-                    <td>
-                        <input class="adminProdCtg" type="text" value="sport">
-                        <input class="adminProdCtg" type="text" value="clothing">
-                        <input class="adminProdCtg" type="text" value="menswear">
-                    </td>
-                    <td>
-                        <button class="btn btn-primary updateProductBtn">Update</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="adminProdId"><div class="adminProdIdDiv">2</div></td>
-                    <td><input class="adminProdName" type="text" value="Shirt"></td>
-                    <td><img class="adminProdPic" src='http://charliemenswear.com/wp-content/uploads/2016/03/pepe-teal-plain-men-shirt.jpg'/></td>
-                    <td><span>$ </span><span><input class="adminProdPrice" type="number" value="15"></span></td>
-                    <td><input class="adminProdStock" type="number" value="8"></td>
-                    <td>
-                        <input class="adminProdCtg" type="text" value="sport">
-                        <input class="adminProdCtg" type="text" value="clothing">
-                        <input class="adminProdCtg" type="text" value="menswear">
-                        <input class="adminProdCtg" type="text" value="summer">
-                    </td>
-                    <td>
-                        <button class="btn btn-primary updateProductBtn">Update</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="adminProdId"><div class="adminProdIdDiv">...</div></td>
-                    <td><input class="adminProdName" type="text"></td>
-                    <td>
-                        <label class="adminProdPicUpload">
-                            <input type="file" name="pic" accept="image/*"/>
-                            Upload
-                        </label>
-                    </td>
-                    <td><span>$ </span><span><input class="adminProdPrice" type="number"></span></td>
-                    <td><input class="adminProdStock" type="number" ></td>
-                    <td>
-                        <input class="adminProdCtg" type="text">
-                        <button class="addCtgBtn">
-                            <span class="glyphicon glyphicon-plus-sign"></span>
-                        </button>
-                    </td>
-                    <td>
-                        <button class="btn btn-primary addProductBtn">Add</button>
-                    </td>
-                </tr>
-              </tbody>
-            </table>
+    <div class="manageStock">
+        <div class="container-fluid">
+             <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th class="adminHeadProdId">Product ID</th>
+                      <th class="adminHeadProdName" style="padding-left: 63px;">Name</th>
+                      <th class="adminHeadProdPic" style="padding-left: 38px;">Pic</th>
+                      <th class="adminHeadProdPrice" style="padding-left: 28px;">Price</th>
+                      <th class="adminHeadProdStock" style="padding-left: 16px;">Stock</th>
+                      <th class="adminHeadProdCtgs" style="padding-left: 20%;">Categories</th>
+                      <th class="adminHeadProdBtns"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <tr ng-repeat="product in productsForAdmin">
+                        <td class="adminProdId">
+                            <div class="adminProdIdDiv" ng-bind="product.id"></div>
+                        </td>
+                        <td>
+                            <input class="adminProdName" type="text" ng-value="product.name">
+                        </td>
+                        <td>
+                            <img class="adminProdPic" ng-src="{{product.pic}}" ng-click="openThisPic(product.pic)"/>
+                        </td>
+                        <td>
+                            <span>$ </span>
+                            <span><input class="adminProdPrice" type="number" ng-value="product.price"></span>
+                        </td>
+                        <td>
+                            <input class="adminProdStock" type="number" ng-value="product.stock">
+                        </td>
+                        <td> 
+                            <div class="adminProdCtgDiv">
+                                <label ng-repeat="ctg in product.categories">
+                                    <input class="adminProdCtg" type="text" ng-hide="ctg==='Show all...'" ng-value="ctg">
+                                </label>
+                                <button class="addCtgBtn">
+                                    <span class="glyphicon glyphicon-plus-sign"></span>
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary updateProductBtn">Update</button>
+                            <button class="btn btn-primary removeProductBtn">Remove</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="adminProdId">
+                            <div class="adminProdIdDiv" ng-bind="productsForAdmin.length+1"></div>
+                        </td>
+                        <td>
+                            <input class="adminProdName" type="text">
+                        </td>
+                        <td>
+                            <label class="adminProdPicUpload">
+                                <input type="file" name="pic" accept="image/*"/>
+                                Upload
+                            </label>
+                        </td>
+                        <td>
+                            <span>$ </span>
+                            <span>
+                                <input class="adminProdPrice" type="number">
+                            </span>
+                        </td>
+                        <td>
+                            <input class="adminProdStock" type="number" >
+                        </td>
+                        <td>
+                            <div class="adminProdCtgDiv">
+                                <input class="adminProdCtg" type="text">
+                                <button class="addCtgBtn">
+                                    <span class="glyphicon glyphicon-plus-sign"></span>
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary addProductBtn">Add</button>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+                 <div class="picToShowBackground" ng-hide="!backGroundOpening" ng-click="outOfPic()"> 
+                 </div>
+                 <label class="adminProdPicChange animated bounceIn" ng-hide="!picToOpen" ng-class="{bounceOut: !picToOpen}">
+                    <input type="file" name="pic" accept="image/*"/>
+                    Change pic
+                 </label>
+                 <img ng-src="{{picToOpen}}" class="picToShow animated bounceIn" 
+                      ng-class="{bounceOut: !picToOpen}" ng-hide="!picToOpen" ng-click="outOfPic()"/>
+            </div>
         </div>
     </div>
-</div>
+</div>-->
 
 
